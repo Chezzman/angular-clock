@@ -1,21 +1,16 @@
-function TimeController($timeout) {
+function TimeController($interval) {
   var controller = this;
-  controller.clock = 'loading clock...'; // initialise the time variable
-  controller.tickInterval = 1000; //ms
 
-  console.log(controller);
-
-  var tick = function() {
-    controller.clock = Date.now(); // get the current time
-    $timeout(tick, controller.tickInterval); // reset the timer
+  var tick = () => {
+    controller.clock = Date.now();
     console.log(controller.clock);
-    console.log(controller.tickInterval);
   };
-
-    // Start the timer
-  $timeout(tick, controller.tickInterval);
+  tick();
+  $interval(tick, 1000);
 }
 
+// TimeController.$inject = ['$interval'];
+
 angular
-  .module('aClock', [])
+  .module('aClock')
   .controller('TimeController', TimeController);

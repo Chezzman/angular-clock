@@ -1,0 +1,17 @@
+{
+  "name": "angular-clock",
+  "authors": [
+    "Charles George van Oeffelen <charlesvo@spartaglobal.co>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

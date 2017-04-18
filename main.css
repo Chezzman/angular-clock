@@ -1,0 +1,28 @@
+body{
+  width: 100vw;
+  height:100vh;
+  justify-content: center;
+
+}
+p{
+  font-size: 30px;
+  padding: 15px;
+  font-weight: 600;
+  text-shadow: 5px 5px rgba(#000000, 0.84);
+
+}
+
+nav{
+  display: inline-block;
+  list-style-type: none;
+}
+
+.clock{
+  width:500px;
+  height:287px;
+  padding: 50px;
+  color: rgb(126, 225, 251);
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 15px solid rgba(41, 43, 40, 1);
+  border-radius: 25px;
+}

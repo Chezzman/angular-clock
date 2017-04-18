@@ -7,17 +7,44 @@
 
 
   <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js" charset="utf-8"></script>
+
+
+  <!-- <script src="bower_components/dist/angular-clock.js"></script> -->
+  <!-- <link rel et" href="bower_components/dist/angular-clock.css"> -->
   <script src="js/app.js"></script>
   <script src="js/controller/clock.controller.js"></script>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="main.css">
   <title>A Clock</title>
 </head>
 <body>
 
+  <nav>
+    <li>
+      <a ui-sref="home">Basic Clock</a>
+    </li>
+    <li>
+      <a ui-sref="angularClock">Clock 3000</a>
+    </li>
+  </nav>
   <h1>Clock</h1>
 
-  <div ng-controller="TimeController as time">
-    <p>{{ time.clock | date:'HH:mm:ss'}}</p>
-  </div>
+  <section class="" ng-controller="TimeController as time" ui-view>
+    <div>
+    </div>
+    <div class="clock" ng-click="digitalClock=false ; analogueClock=true" ng-if="analogueClock === true">
+      <p>{{ time.clock | date:'EEE d MMM yyyy'}}</p>
+      <p>{{ time.clock | date: 'hh:mm:ss a' }}</p>
+    </div>
+    <div class="clock" ng-click="analogueClock=false ; digitalClock=true" ng-if="digitalClock === true">
+      <p>{{ time.clock | date:'EEE d MMM yyyy'}}</p>
+      <p>{{ time.clock | date: 'HH:mm:ss' }}</p>
+    </div>
+    <button type="button" name="button" ng-click="analogueClock=false ; digitalClock=true">Digital Clock </button>
+    <button type="button" name="button" ng-click="digitalClock=false ; analogueClock=true">Digital plus am/pm</button>
+  </section>
 
 
 

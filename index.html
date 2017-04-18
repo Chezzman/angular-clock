@@ -31,19 +31,20 @@
   </nav>
   <h1>Clock</h1>
 
-  <section class="" ng-controller="TimeController as time" ui-view>
+  <section class="" ng-controller="TimeController as time">
     <div>
     </div>
-    <div class="clock" ng-click="digitalClock=false ; analogueClock=true" ng-if="analogueClock === true">
+    <div class="clock"  ng-if="analogueClock === true">
       <p>{{ time.clock | date:'EEE d MMM yyyy'}}</p>
       <p>{{ time.clock | date: 'hh:mm:ss a' }}</p>
     </div>
-    <div class="clock" ng-click="analogueClock=false ; digitalClock=true" ng-if="digitalClock === true">
+    <div class="clock" ng-if="digitalClock === true">
       <p>{{ time.clock | date:'EEE d MMM yyyy'}}</p>
       <p>{{ time.clock | date: 'HH:mm:ss' }}</p>
     </div>
-    <button type="button" name="button" ng-click="analogueClock=false ; digitalClock=true">Digital Clock </button>
-    <button type="button" name="button" ng-click="digitalClock=false ; analogueClock=true">Digital plus am/pm</button>
+    <button type="button" name="button" ng-click="analogueClock=false ; digitalClock=true">Digital Clock 24h</button>
+    <button type="button" name="button" ng-click="digitalClock=false ; analogueClock=true">Digital Clock 12h am/pm</button>
+    <div ui-view></div>
   </section>
 
 

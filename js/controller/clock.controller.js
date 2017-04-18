@@ -4,7 +4,7 @@ function TimeController($interval) {
   var tick = () => {
     controller.clock = Date.now();
   };
-  tick();
+
   $interval(tick, 1000);
 }
 
